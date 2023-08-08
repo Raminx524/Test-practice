@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Times New Roman", Times, serif;
+}
+#pageContainer {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "sidebar main main main"
+    "sidebar main main main"
+    "sidebar main main main"
+    "footer footer footer footer";
+}
+.header {
+  grid-area: header;
+  background-color: #00f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a img {
+  height: 10vh;
+}
+a img:hover {
+  height: 10.5vh;
+  filter: drop-shadow(1px 1px 1px #fff);
+}
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+.navbar a {
+  text-decoration: none;
+  font-size: 2vw;
+  color: #fff;
+}
+.navbar a:hover {
+  font-size: 2.5vw;
+  text-shadow: 2px 1px #000;
+}
+.header:hover {
+  background-color: rgb(98, 98, 254);
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+  background-color: #00f;
+  height: 20vh;
+}
+.footer:hover {
+  background-color: rgb(98, 98, 254);
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgb(2, 184, 2);
+}
+.main {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flowerDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 32%;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+.flowerDetails img {
+  width: 50%;
+  height: 25vh;
+}
+#calanit:hover {
+  filter: blur(2px);
+}
+#daisy:hover {
+  filter: contrast(1.5);
+}
+#rakefet:hover {
+  filter: grayscale(1);
+}
+#lily:hover {
+  filter: saturate(3);
+}
+#rose:hover {
+  filter: sepia(1);
+}
+@keyframes square-circle {
+  0% {
+    border-radius: 0;
+  }
+  50% {
+    border-radius: 50%;
+  }
+  100% {
+    border-radius: 50%;
+  }
+}
+.flowerDetails:hover {
+  animation: square-circle 3s linear;
+}
+@media screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+  .flowerDetails img {
+    width: 100%;
+  }
+}
